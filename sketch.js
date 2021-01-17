@@ -36,6 +36,7 @@ function setup() {
       balls.push(new Ball(k ,375))
     }
 
+
     
 
     ground = new BaseClass(240 , 790 , 800 , 10)
@@ -43,12 +44,13 @@ function setup() {
 
 function draw() {
   //console.log(random(width / 2 -10 , width/2+10))
-  //background('black')
+  background('white')
   ground.display()
 
   for(var k = 0 ; k < divisions.length ; k ++) {
     divisions[k].display()
   }
+  Engine.update(engine)
 
 
   for(var k = 0 ; k < balls.length ; k ++) {
@@ -56,7 +58,7 @@ function draw() {
   }
 
   if(frameCount%60 === 0 ) {
-    particles.push(new Particle(random(width / 2 -50 , width/2+50) , 10 ,10))
+    particles.push(new Particle(random(width / 2 -10 , width/2+10) , 10 ,10))
   }
 
   for(var k = 0 ; k < particles.length ; k ++) {
